@@ -1,0 +1,28 @@
+server:
+  port: 7005
+
+gateway:
+  host: localhost
+  port: 7004
+
+app:
+  service:
+    name: Department Service
+
+spring:
+  application:
+    name: department-svc-dev
+  #  profiles:
+  #    active: test
+  data:
+    mongodb:
+      uri: mongodb://local-mongo-usr:local-mongo-pwd@localhost:27017/department-svc?authSource=admin
+      database: department-svc
+
+  redis:
+    host: localhost
+    port: 6379
+    password: secure_password
+
+#values configs
+administration-svc-feign-client: administration-svc-dev

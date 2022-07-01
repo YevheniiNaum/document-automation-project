@@ -1,0 +1,26 @@
+server:
+  port: 8004
+
+app:
+  service:
+    name: Gateway Service
+
+spring:
+#  main:
+#    web-application-type: reactive
+  application:
+    name: gateway-svc
+
+#    cloud:
+#      gateway:
+#        discovery:
+#          locator:
+#            enabled: true
+#            lower-case-service-id: true
+
+#      #ROUTES
+#        routes[0]:
+#          id: registry-svc
+#          uri: lb://registry-svc
+#          predicates[0]: Path=/greeting/hello
+#          predicates[1]: Method=GET

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Spring Boot & Thymeleaf File Upload</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <meta charset="UTF-8">
+</head>
+<body>
+
+<h2>Upload File Example</h2>
+<form method="post" th:action="@{/document/upload-document}" enctype="multipart/form-data">
+  <div class="form-group">
+    <input type="file" name="file" class="form-control-file">
+  </div>
+  <button type="submit" class="btn btn-primary">Upload File</button>
+</form>
+</body>
+</html>

@@ -1,0 +1,45 @@
+#        "--requirepass secure_password"
+
+services:
+  redis:
+    image: redis:4.0.10-alpine
+    command: >
+        "--requirepass secure_password"
+        "--bind 0.0.0.0"
+    restart: always
+    ports:
+        - "6379:6379"
+    healthcheck:
+        test: [ "CMD", "redis-cli"]
+        interval: 10s
+        timeout: 3s
+        retries: 5
+
+  mongo:
+    container_name: mongodb
+    image: mongo:4.2.8
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: local-mongo-usr
+      MONGO_INITDB_ROOT_PASSWORD: local-mongo-pwd
+      MONGO_INITDB_DATABASE: user-svc
+    volumes:
+      - ./mongo:/docker-entrypoint-initdb.d
+      - ./mongo-data:/data/db
+    ports:
+      - 27017:27017
+    healthcheck:
+      test: echo 'rs.initiate().ok || rs.status().ok' | mongo -u $${MONGO_INITDB_ROOT_USERNAME} -p $${MONGO_INITDB_ROOT_PASSWORD} --quiet
+      interval: 10s
+      timeout: 10s
+      retries: 5
+    stop_grace_period: 30s
+    command: [--auth]
+
+#  keycloak:
+#      image: quay.io/keycloak/keycloak:15.0.1
+#      ports:
+#          - "8080:8080"
+#      environment:
+#          - KEYCLOAK_USER=admin
+#          - KEYCLOAK_PASSWORD=admin

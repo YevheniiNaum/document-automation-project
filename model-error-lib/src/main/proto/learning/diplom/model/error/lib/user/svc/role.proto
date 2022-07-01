@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package learning.diplom.model.error.lib.user.svc;
+option java_package = "learning.diplom.model.error.lib.user.svc";
+option java_multiple_files = true;
+
+enum Role {
+    HEAD_OF_ADMINISTRATION = 0;
+    DEPUTY_HEAD_OF_ADMINISTRATION = 1;
+    HEAD_OF_DEPARTMENT = 2;
+    DEPUTY_HEAD_OF_DEPARTMENT = 3;
+    EMPLOYEE = 4;
+}

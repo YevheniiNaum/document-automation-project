@@ -1,0 +1,29 @@
+server:
+  port: 7006
+
+gateway:
+  host: localhost
+  port: 7004
+
+jwt:
+  secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
+  validity: 180000
+
+app:
+  service:
+    name: Administration Service
+
+spring:
+  application:
+    name: administration-svc-dev
+  #  profiles:
+  #    active: test
+  data:
+    mongodb:
+      uri: mongodb://local-mongo-usr:local-mongo-pwd@localhost:27017/administration-svc?authSource=admin
+      database: administration-svc
+
+  redis:
+    host: localhost
+    port: 6379
+    password: secure_password

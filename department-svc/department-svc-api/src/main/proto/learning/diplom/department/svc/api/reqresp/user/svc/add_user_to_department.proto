@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package learning.diplom.department.svc.api.reqresp.user.svc;
+option java_package = "learning.diplom.department.svc.api.reqresp.user.svc";
+option java_multiple_files = true;
+
+import "learning/diplom/model/error/lib/success_response.proto";
+import "learning/diplom/model/error/lib/error.proto";
+import "learning/diplom/model/error/lib/user/svc/role.proto";
+
+message AddUserToDepartmentRequest {
+    string user_id = 1;
+    string name = 2;
+    string surname = 3;
+    learning.diplom.model.error.lib.user.svc.Role role = 4;
+}
+
+message AddUserToDepartmentResponse {
+    oneof response {
+        learning.diplom.model.error.lib.Success success = 1;
+        learning.diplom.model.error.lib.Error error = 2;
+    }
+}

@@ -1,0 +1,18 @@
+server:
+  port: 8002
+
+sping:
+  application:
+    name: eureka-svc
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+  instance:
+    hostname: localhost
+spring:
+  redis:
+    host: localhost
+    port: 6379
+    password: secure_password

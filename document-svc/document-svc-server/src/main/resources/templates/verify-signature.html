@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+<h2>Verify signature</h2>
+<form method="post" th:action="@{/sign/verify}" enctype="multipart/form-data">
+
+  <label for="document">Choose document</label>
+  <div class="form-group">
+    <input id="document" type="file" name="document" class="form-control-file">
+  </div>
+  <hr>
+
+  <label for="signature">Choose signature</label>
+  <div class="form-group">
+    <input id="signature" type="file" name="signature" class="form-control-file">
+  </div>
+  <hr>
+
+  <label for="publicKey">Choose public key</label>
+  <div class="form-group">
+    <input id="publicKey" type="file" name="publicKey" class="form-control-file">
+  </div>
+  <hr>
+
+  <button type="submit" class="btn btn-primary">Upload File</button>
+</form>
+
+</body>
+</html>

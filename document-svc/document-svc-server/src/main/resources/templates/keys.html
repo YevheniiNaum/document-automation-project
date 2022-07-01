@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<h1>Keys PAGE</h1>
+
+<div class="container">
+
+  <div th:object="${privateKey}">
+    <h3  th:text="${privateKey}"></h3>
+
+    <!--    <a th:href="@{/users/{id}/edit(id =${userInfo.getId()})}">Edit</a>-->
+    <hr>
+  </div>
+
+  <div th:object="${publicKey}">
+    <h3  th:text="${publicKey}"></h3>
+
+    <!--    <a th:href="@{/users/{id}/edit(id =${userInfo.getId()})}">Edit</a>-->
+    <hr>
+  </div>
+</div>
+
+
+</body>
+</html>

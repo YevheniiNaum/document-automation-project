@@ -1,0 +1,26 @@
+spring:
+  main:
+    allow-bean-definition-overriding: true
+    web-application-type: reactive
+
+  security:
+    oauth2:
+      client:
+        registration:
+#          github:
+##            clientId: github-client-id
+##            clientSecret: github-client-secret
+#            clientId: 7b7ffef94ece912a9f57
+#            clientSecret: 6694461a6b27f485ac4101093ef9475399419605
+          google:
+            clientId: 1079214946412-jjqde44bhl7phev1t74aqtnimvdv0dts.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid, email, profile
+
+
+
+logging:
+  level:
+    org:
+      springframework:
+        security: DEBUG

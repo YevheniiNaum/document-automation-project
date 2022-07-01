@@ -1,0 +1,9 @@
+#spring:
+#  application:
+#    name: department-svc-dev
+#  profiles:
+#    active: test
+#  data:
+#    mongodb:
+#      uri: mongodb://local-mongo-usr:local-mongo-pwd@localhost:27017/department-svc?authSource=admin
+#      database: department-svc

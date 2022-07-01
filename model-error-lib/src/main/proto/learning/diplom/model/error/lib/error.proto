@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package learning.diplom.model.error.lib;
+option java_package = "learning.diplom.model.error.lib";
+option java_multiple_files = true;
+
+import "learning/diplom/model/error/lib/entity.proto";
+
+message Error {
+    oneof error{
+        InternalServerError internal_server_error = 1;
+        EntityNotFoundError entity_not_found_error = 2;
+        EntityAlreadyChangedError entity_already_changed_error = 3;
+        EntityAlreadyExistsError entity_already_exists_error = 4;
+        EntityLimitExceeded entity_limit_exceeded_error = 5;
+        IllegalArgumentError illegal_argument_error = 6;
+    }
+
+    message InternalServerError {
+        string message = 1;
+    }
+
+    message EntityNotFoundError {
+        string message = 1;
+        Entity entity = 2;
+    }
+
+    message EntityAlreadyChangedError {
+        string message = 1;
+        Entity entity = 2;
+    }
+
+    message EntityAlreadyExistsError {
+        string message = 1;
+        Entity entity = 2;
+    }
+
+    message EntityLimitExceeded {
+        string message = 1;
+        Entity entity = 2;
+    }
+
+    message IllegalArgumentError {
+        string message = 1;
+    }
+}

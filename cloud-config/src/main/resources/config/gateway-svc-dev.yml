@@ -1,0 +1,44 @@
+server:
+  port: 7004
+
+app:
+  service:
+    name: Gateway Service DEV
+
+spring:
+  session:
+    store-type: redis
+  main:
+    web-application-type: reactive
+  jackson:
+    default-property-inclusion: NON_NULL
+  application:
+    name: gateway-svc-dev
+  redis:
+    host: localhost
+    port: 6379
+    password: secure_password
+
+  data:
+    mongodb:
+      uri: mongodb://local-mongo-usr:local-mongo-pwd@localhost:27017/user-svc?authSource=admin
+      database: user-svc
+
+jwt:
+  secret: BvPHGM8C0ia4uOuxxqPD5DTbWC9F9TWvPStp3pb7ARo0oK2mJ3pd3YG4lxA9i8bj6OTbadwezxgeEByY
+  validity: 180000
+  info: info
+
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+
+      #ROUTES
+      routes:
+        - id: authority-svc-dev
+          uri: lb://authority-svc-dev
+          predicates:
+            - Path=/auth/**

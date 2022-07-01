@@ -1,0 +1,31 @@
+# Application-wide configuration
+server:
+  port: 8004
+
+spring:
+  application:
+    name: gateway-svc
+
+  cloud:
+    config:
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: cloud-config
+      username: configUser
+      password: configPassword
+#      retry:
+#        initial-interval: 2000
+#        multiplier: 1.5
+#        max-interval: 60000
+#        max-attempts: 100
+#      uri: http://localhost:8000
+#      fail-fast: true
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka
+    fetch-registry: true
+  instance:
+    lease-renewal-interval-in-seconds: 10

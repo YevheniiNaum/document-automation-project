@@ -1,0 +1,6 @@
+server:
+  port: 8006
+
+app:
+  service:
+    name: Administration Service

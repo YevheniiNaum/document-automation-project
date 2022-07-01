@@ -1,0 +1,22 @@
+server:
+  port: 8007
+
+spring:
+  application:
+    name: document-svc
+  cloud:
+    config:
+      username: configUser
+      password: configPassword
+      fail-fast: true
+      discovery:
+        enabled: true
+        service-id: cloud-config
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka
+    fetch-registry: true
+  instance:
+    lease-renewal-interval-in-seconds: 10

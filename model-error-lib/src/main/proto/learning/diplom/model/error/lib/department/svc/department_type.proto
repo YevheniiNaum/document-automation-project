@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package learning.diplom.model.error.lib.department.svc;
+option java_package = "learning.diplom.model.error.lib.department.svc";
+option java_multiple_files = true;
+
+enum DepartmentType {
+    GENERAL_DEPARTMENT = 0;
+    FINANCIAL_DEPARTMENT = 1;
+    HUMAN_RESOURCES_DEPARTMENT = 2;
+    ARCHITECTURE_DEPARTMENT = 3;
+}

@@ -1,0 +1,6 @@
+server:
+  port: 8008
+
+app:
+  service:
+    name: Authority Service

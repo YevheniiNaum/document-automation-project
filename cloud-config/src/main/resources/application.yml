@@ -1,0 +1,30 @@
+# Application-wide configuration
+server:
+  port: 8000
+
+spring:
+  application:
+    name: cloud-config
+  profiles:
+    active: native, test, dev
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:jeniknaum5/cloud-config.git
+#          host-key-algorithm: ssh-rsa
+#          host-key-algorithm: ssh-ed25519
+#          host-key-algorithm: ecdsa-sha2-nistp521
+#        native:
+#          search-locations:
+#            - classpath:/config
+  security:
+    user:
+      name: configUser
+      password: configPassword
+      roles: [SYSTEM]
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8002/eureka

@@ -1,0 +1,9 @@
+server:
+  port: 8003
+
+app:
+  service:
+    name: User Service
+
+#values configs
+department-svc-feign-client: department-svc

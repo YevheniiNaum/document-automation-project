@@ -1,0 +1,6 @@
+server:
+  port: 8005
+
+app:
+  service:
+    name: Department Service

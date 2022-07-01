@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package learning.diplom.model.error.lib;
+option java_package = "learning.diplom.model.error.lib";
+option java_multiple_files = true;
+
+enum Entity {
+    USER = 0;
+    DEPARTMENT = 1;
+    ADMINISTRATION = 2;
+    DOCUMENT = 3;
+    TOKEN = 4;
+}

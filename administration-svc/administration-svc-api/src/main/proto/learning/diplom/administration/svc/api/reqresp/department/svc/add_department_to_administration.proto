@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package learning.diplom.administration.svc.api.reqresp.department.svc;
+option java_package = "learning.diplom.administration.svc.api.reqresp.department.svc";
+option java_multiple_files = true;
+
+import "learning/diplom/model/error/lib/success_response.proto";
+import "learning/diplom/model/error/lib/error.proto";
+import "learning/diplom/model/error/lib/department/svc/department_type.proto";
+
+message AddDepartmentToAdministrationRequest {
+    string department_id = 1;
+    learning.diplom.model.error.lib.department.svc.DepartmentType department_type = 2;
+    string head_of_department_id = 3;
+}
+
+message AddDepartmentToAdministrationResponse {
+    oneof response {
+        learning.diplom.model.error.lib.Success success = 1;
+        learning.diplom.model.error.lib.Error error = 2;
+    }
+}
